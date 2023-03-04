@@ -15,6 +15,7 @@ cp -R /var/www/pterodactyl /var/www/pterodactyl-backup
 mysqldump -u root -p panel > /var/www/pterodactyl-backup/panel.sql
 cd /var/www/pterodactyl
 php artisan down
+clear
 echo "Installing"
 curl -L -o panel.tar.gz https://github.com/jexactyl/jexactyl/releases/latest/download/panel.tar.gz
 tar -xzvf panel.tar.gz && rm -f panel.tar.gz
@@ -24,6 +25,7 @@ composer install --no-dev --optimize-autoloader
 php artisan optimize:clear
 php artisan migrate --seed --force
 chown -R www-data:www-data /var/www/pterodactyl/*
+clear
 echo "Finishing install"
 php artisan queue:restart
 php artisan up
