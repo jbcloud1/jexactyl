@@ -11,6 +11,7 @@ apt update
 apt upgrade -y
 clear
 echo "Preparing install"
+apt install php -y
 cp -R /var/www/pterodactyl /var/www/pterodactyl-backup
 mysqldump -u root -p panel > /var/www/pterodactyl-backup/panel.sql
 cd /var/www/pterodactyl
