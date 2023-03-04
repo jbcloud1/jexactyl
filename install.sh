@@ -29,5 +29,8 @@ clear
 echo "Finishing install"
 php artisan queue:restart
 php artisan up
+apt update
+apt upgrade -y
+clear
 echo "Jexactly have been Installed"
 exit
