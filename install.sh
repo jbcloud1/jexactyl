@@ -1,11 +1,5 @@
 #!/bin/bash
-echo "Jexactly only work if pterodactyl is installed, do you want to continue"
-select yn in "Yes" "No"; do
-    case $yn in
-        Yes ) make install; break;;
-        No ) exit;;
-    esac
-done
+echo "Jexactly only work if pterodactyl is installed"
 echo "Updating"
 apt update
 apt upgrade -y
